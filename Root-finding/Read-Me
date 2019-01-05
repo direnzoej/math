@@ -1,6 +1,6 @@
 Rootfinding
 
-Scripts for finding function roots by different means, including:
+Scripts for finding function roots by different methods, including:
   - Bisection method
   - fixed-point iteration
   - Newton's method
