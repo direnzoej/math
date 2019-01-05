@@ -6,11 +6,6 @@ Created on Sat Nov  3 21:01:32 2018
 @author: evan
 """
 
-def g(x):
-    import math
-    return ((1+4*x**2)**(-1) 
-            - (0.8270182690 - 0.8203317303*x**2))**2
-
 def S_n_f(n,f,a,b):
     '''Numerically approximates the definite integral of a function
     between given bounds by Simpson's composite method.
