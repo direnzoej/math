@@ -1,0 +1,7 @@
+Rootfinding
+
+Scripts for finding function roots by different means, including:
+  - Bisection method
+  - fixed-point iteration
+  - Newton's method
+  - Secant method
