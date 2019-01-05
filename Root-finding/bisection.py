@@ -2,7 +2,8 @@ def bisection(f,a,b,eps=1E-5,tar=0):
     '''Applies the bisection method by recursion to find 
     the root of a given function on a given interval.
     
-    f (func): the function evaluated
+    f (func): the function evaluated, which takes the 
+                x-value as its only argument
     a (flt): interval left endpoint
     b (flt): interval right endpoint
     eps (flt): 'epsilon', the greatest tolerated interval 
@@ -22,5 +23,5 @@ def bisection(f,a,b,eps=1E-5,tar=0):
         return [a,b]
     if f_c > tar: b = c # set right endpoint to midpoint OR
     if f_c < tar: a = c # set left endpoint to midpoint
-    if b - a < eps: return [a,b] # return solution
+    if b - a < eps: return [a,b] # return found solution
     else: return bisection(f,a,b,eps,tar) # recursion to solve
