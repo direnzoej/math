@@ -5,11 +5,7 @@ Created on Wed Nov 14 20:16:59 2018
 
 @author: evan
 """
-
-def f(x):
-    '''The function being interpolated.'''
-    return (1+4*x**2)**(-1)
-
+#
 def least_sqrs_aprx(n,f,a=-1,b=1):
     '''Finds a least-squares approximation of a given function using
     Legendre polynomials and Simpsons composite method of numerical 
@@ -96,4 +92,5 @@ def least_sqrs_aprx(n,f,a=-1,b=1):
         for j in range(len(value)):
             output[j] += value[j]
             
-    return output            
+    return output
+#
