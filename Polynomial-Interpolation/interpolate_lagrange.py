@@ -6,12 +6,12 @@ Created on Sun Nov 11 19:30:34 2018
 @author: evan
 """
 
-def lagrange_interp(f,nodes,a=-1,b=1):
-    '''Interpolates a given function by Lagrange's formula for n given nodes:
+def interpolate_lagrange( f, nodes, a=-1, b=1 ):
+    ''' Interpolates a given function (f) by Lagrange's formula for n given nodes (nodes):
         P(x) = y_0*L_0 + ... + y_(n-1)*L_(n-1)
     
     f (func): the function being interpolated
-    nodes (list): the nodes at which to interpolate
+    nodes (list[int,flt]): the nodes at which to interpolate
     a (flt): the left endpoint of the interpolation interval, def. set to -1
     b (flt): the right endpoint of the interpolation interval, def. set to 1
     
@@ -19,10 +19,10 @@ def lagrange_interp(f,nodes,a=-1,b=1):
      a_0 + a_1*x + a_2*x**2 + ... + a_n*x**n , ordered [a_0, ..., a_n].
     '''
     # foil_nodes is used to handle L numerators
-    def foil_nodes(nodes):
-        '''Foils a polynomial factorization to find the expanded form.
+    def foil_nodes( nodes ):
+        ''' Foils a polynomial factorization to find the expanded form.
         
-        nodes (list)(ints,flts): a list of values in form [a_0, a_1, ..., a_n] 
+        nodes (list[ints,flts]): a list of values in form [a_0, a_1, ..., a_n] 
          representing polynomial factors in the form (x + a_i)
          
         Returns a list of polynomial coefficients for a polynomial in the form
@@ -47,8 +47,9 @@ def lagrange_interp(f,nodes,a=-1,b=1):
             steps[count].append(1)
             count += 1
         
-        return steps[len(steps)-1]
-        #
+        return steps[ len(steps)-1 ]
+    #
+    
     n=len(nodes)
     # find y-values
     ys=[f(node) for node in nodes]
@@ -77,5 +78,6 @@ def lagrange_interp(f,nodes,a=-1,b=1):
     for j in range(n):
         for k in range(n):
             output[j] += numers[k][j]*coefs[k]
-        
+    #
     return output
+#
